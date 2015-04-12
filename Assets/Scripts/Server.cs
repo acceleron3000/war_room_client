@@ -5,7 +5,7 @@ using SimpleJSON;
 public class Server : MonoBehaviour
 {
 
-    string getGameDataUrl = "";
+    string getGameDataUrl = "localhost:9292/getUpdate";
 
     void Update()
     {
@@ -13,10 +13,10 @@ public class Server : MonoBehaviour
     }
 
     IEnumerator updateGameData() {
-    var www = new WWW(getGameDataUrl);
-    yield return www;
-    JSONNode json = JSON.Parse(itemsText);
-    var game : GameObject = GameObject.name("GameScript");
-    game.rounds.Add(json["round"], json);
-}
+        WWW www = new WWW(getGameDataUrl);
+        yield return www;
+        JSONNode json = JSON.Parse(itemsText);
+        GameObject game = GameObject.Find("GameScript");
+        game.rounds.Add(json["round"], json);
+    }
 }

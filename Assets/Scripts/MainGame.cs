@@ -27,6 +27,8 @@ public class MainGame : MonoBehaviour {
     public int CARD_Z = 1;
     public float CARD_SCALE = 0.7f;
 
+    public var rounds = new Dictionary<System.Int32, JSONNode>();
+
 	// Use this for initialization
     IEnumerator Start()
     {

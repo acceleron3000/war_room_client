@@ -30,6 +30,8 @@ public class MainGame : MonoBehaviour {
     public float CARD_SCALE = 0.7f;
     public float COUNTRY_Y_ROTATION = 10f;
 
+    public var rounds = new Dictionary<System.Int32, JSONNode>();
+
 	// Use this for initialization
     IEnumerator Start()
     {

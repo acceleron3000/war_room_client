@@ -4,8 +4,7 @@ using SimpleJSON;
 
 public class Server : MonoBehaviour
 {
-
-    string getGameDataUrl = "localhost:9292/getUpdate";
+    private string getGameDataUrl = "localhost:9292/getUpdate";
 
     void Update()
     {

@@ -27,7 +27,7 @@ public class MainGame : MonoBehaviour {
     public int CARD_Z = 1;
     public float CARD_SCALE = 0.7f;
 
-    public var rounds = new Dictionary<System.Int32, JSONNode>();
+    public Dictionary<System.Int32, JSONNode> rounds = new Dictionary<System.Int32, JSONNode>();
 
 	// Use this for initialization
     IEnumerator Start()
@@ -76,5 +76,14 @@ public class MainGame : MonoBehaviour {
             card.transform.localPosition = new Vector3(LEFTMOST_CARD + i * CARD_SPACING, CARD_Y, CARD_Z);
             card.transform.localScale = new Vector3(CARD_SCALE, CARD_SCALE, CARD_SCALE);
         }
+    }
+
+    void getCurrentActions() {
+        System.Int32 round = rounds.Count;
+        if (rounds.TryGetValue(round, out value)) {
+            
+        }
+        /*"{\"actions\":[[108,204,6],[202,208,109],[201,5,106]],\"round\":-1}"*/
+
     }
 }

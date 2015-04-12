@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class WeaponCard : MonoBehaviour {
 
+    public CountryCard attacking;
+
     public void initCard(JSONNode info)
     {
         Debug.Log(info.ToString());

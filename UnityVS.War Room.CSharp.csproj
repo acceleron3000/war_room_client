@@ -55,12 +55,6 @@
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>Assets\plugins\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
-    <Reference Include="YamlDotNet.Core">
-      <HintPath>Assets\Scripts\YamlDotNet2013Sep\YamlDotNet.Core.2.2.0\lib\net35\YamlDotNet.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="YamlDotNet.RepresentationModel">
-      <HintPath>Assets\Scripts\YamlDotNet2013Sep\YamlDotNet.RepresentationModel.2.2.0\lib\net35\YamlDotNet.RepresentationModel.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="UnityVS.War Room.CSharp.Plugins.csproj">
@@ -69,13 +63,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\JSON Tests\CSharp\Test_CSharp.cs" />
     <Compile Include="Assets\Scripts\MainGame.cs" />
-    <Compile Include="Assets\Scripts\YamlDotNet2013Sep\YamlDotNet2013SepTest.cs" />
-    <Compile Include="Assets\WeaponCard.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\JSON Tests\TroubleShoot.txt" />
+    <Compile Include="Assets\Scripts\WeaponCard.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>

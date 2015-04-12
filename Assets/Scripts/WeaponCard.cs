@@ -9,8 +9,12 @@ public class WeaponCard : MonoBehaviour {
     {
         Debug.Log(info.ToString());
         Text[] texts = GetComponentsInChildren<Text>();
-        texts[0].text = info["name"];
-        texts[1].text = info["description"];
+        string title = info["name"];
+        title = title.Replace(" ", "   ");
+        texts[0].text = title;
+        string desc = info["description"] + "\n<color=#cc0000><size=15>Power: " + info["power"] + "</size></color>\n<color=#111111>Targets: " + info["target"] + "</color>";
+        //desc = desc.Replace(" ", "   ");
+        texts[1].text = desc;
     }
 
 	// Use this for initialization

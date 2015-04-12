@@ -1,16 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.IO;
-using YamlDotNet.RepresentationModel;
 using SimpleJSON;
 
 
 public class MainGame : MonoBehaviour {
-
-    private const int LEFTMOST_CARD = -200;
-    private const int CARD_SPACING = 200;
-    private const int CARD_Y = -90;
-    private const int CARD_Z = 1;
 
     private static MainGame myself;
 
@@ -26,6 +20,12 @@ public class MainGame : MonoBehaviour {
 
     public WeaponCard itemCardPrefab;
     public Canvas canvas;
+
+    public int LEFTMOST_CARD = -100;
+    public int CARD_SPACING = 100;
+    public int CARD_Y = -80;
+    public int CARD_Z = 1;
+    public float CARD_SCALE = 0.7f;
 
 	// Use this for initialization
     IEnumerator Start()
@@ -72,7 +72,7 @@ public class MainGame : MonoBehaviour {
             card.transform.parent = canvas.transform;
             card.initCard(items["destructive"]["public"][i]);
             card.transform.localPosition = new Vector3(LEFTMOST_CARD + i * CARD_SPACING, CARD_Y, CARD_Z);
-            card.transform.localScale = new Vector3(1, 1, 1);
+            card.transform.localScale = new Vector3(CARD_SCALE, CARD_SCALE, CARD_SCALE);
         }
     }
 }

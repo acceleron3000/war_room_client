@@ -39,12 +39,17 @@ public class MainGame : MonoBehaviour {
     public Dictionary<System.Int32, JSONNode> rounds = new Dictionary<System.Int32, JSONNode>();
 
 	// Use this for initialization
-    IEnumerator Start()
+    void Start()
+    {
+        resetInfo();
+	}
+	
+	private IEnumerator resetInfo()
     {
         /**
-         * loads sample weapon cards
-         */
-        
+        * loads sample weapon cards
+        */
+
         //when we publish online, url needs to point to same domain as game
         string url = "file://C:/test/actions.json";// "http://google.com"; //TODO update with server URL
 
@@ -57,7 +62,7 @@ public class MainGame : MonoBehaviour {
         //load the sample json file
         WWW file = new WWW(url);
         yield return file;
-        if(file.error != null)
+        if (file.error != null)
             Debug.LogError(file.error);
 
         resetHand(file.text);
@@ -84,13 +89,7 @@ public class MainGame : MonoBehaviour {
 
         resetCountries(file.text);
         file.Dispose();
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-	
-	}
+    }
 
     /**
      * Takes a string, formatted in json, of all of the items that

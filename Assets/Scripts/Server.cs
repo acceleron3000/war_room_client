@@ -2,16 +2,21 @@ using UnityEngine;
 using System.Collections;
 using SimpleJSON;
 
-var getGameDataUrl = "";
+public class Server : MonoBehaviour
+{
 
-void Update() {
-    updateGameData();
-}
+    string getGameDataUrl = "";
 
-void updateGameData() {
-    var www = new WWW(getGameData);
-    yield www;
+    void Update()
+    {
+        updateGameData();
+    }
+
+    IEnumerator updateGameData() {
+    var www = new WWW(getGameDataUrl);
+    yield return www;
     JSONNode json = JSON.Parse(itemsText);
     var game : GameObject = GameObject.name("GameScript");
     game.rounds.Add(json["round"], json);
+}
 }

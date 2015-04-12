@@ -15,8 +15,8 @@ public class Server : MonoBehaviour
     IEnumerator updateGameData() {
     var www = new WWW(getGameDataUrl);
     yield return www;
-    JSONNode json = JSON.Parse(itemsText);
-    var game : GameObject = GameObject.name("GameScript");
-    game.rounds.Add(json["round"], json);
+    //JSONNode json = JSON.Parse(itemsText);
+    //var game : GameObject = GameObject.name("GameScript");
+    //game.rounds.Add(json["round"], json);
 }
 }
